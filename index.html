@@ -6,6 +6,7 @@
 
 	<!--bootstrap library-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="icon" href="assets/favicon.ico">
 
 	<!--Jquery library-->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -40,16 +41,16 @@
 
 <form id="modalForm">
 	<h2> Name </h2>
-	<input type="text">
+	<input type="text" id="userName">
 	<h2> Age </h2>
-	<input type="text">
+	<input type="text" id="userAge">
 	<h2> Gender</h2>
-	<input type="text">
+	<input type="text" id="userGender">
 	<h2> Price</h2>
-	<input type="text">
+	<input type="text" id="userPays">
 	<br>
 
-	<button> submit </button>
+	<button class="submitBtn"> submit </button>
 </form>
 
 
@@ -60,7 +61,7 @@
 	<h2> Password </h2>
 	<input type="text">
 	<br>
-	<button> submit </button>
+	<button class="submitBtn"> submit </button>
 </form>
 
 <!--end of hidden forms, start of page body-->
@@ -93,6 +94,8 @@
 
 
 <script src="script.js"></script>
+
+
 
 </body>
 </html>
