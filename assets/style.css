@@ -1,5 +1,4 @@
 
-
 body{
 	background: black;
 	color: white;
@@ -27,36 +26,31 @@ button{
 
 }
 
-h2{
-	color: black;
-	z-index: 3;
-}
+
 
 #loginForm{
 	display: none;
 	position: absolute;
-	top: 0%;
-	left: 40%;
 	z-index: 2;
 	background: white;
+	margin-left: 35%;
+	margin-right: 35%;
 	width: 30%;
 	height: 400px;
 	margin-top: 20%;
-	border: 2px solid red;
 
 }
 
 #modalForm{
 	display: none;
 	position: absolute;
-	top: 0%;
-	left: 40%;
 	z-index: 2;
 	background: white;
+	margin-left: 35%;
+	margin-right: 35%;
 	width: 30%;
 	height: 400px;
 	margin-top: 20%;
-	border: 2px solid red;
 }
 
 #myJtron{
@@ -64,6 +58,5 @@ h2{
 	height: 500px;
 	background-size: cover;
 	background-repeat: no-repeat;
-	z-index: 1;
 	
 }
