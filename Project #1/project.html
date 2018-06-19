@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>title </title>
+
+    <!--bootstrap library-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+
+    <!--Jquery library-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <!--our css-->
+    <link rel="stylesheet" type="text/css" href="assets/project.css">
+
+    <!--addingFireBase-->
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    
+    <style>
+        #map {
+          height: 100%;
+        }
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+
+</head>
+
+<body>
+
+    <nav>
+        <button>
+            <a> Find A Party</a>
+        </button>
+        <button>
+            <a> Throw A Party</a>
+        </button>
+        <button class="signUpBtn">Sign Up</button>
+        <button class="loginBtn"> Login</button>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid" id="myJtron">
+
+
+    </div>
+
+
+
+    <!--Hidden Forms until click-->
+
+    <form id="modalForm">
+        <h2> Name </h2>
+        <input type="text">
+        <h2> Age </h2>
+        <input type="text">
+        <h2> Gender</h2>
+        <input type="text">
+        <h2> Price</h2>
+        <input type="text">
+        <br>
+
+        <button> submit </button>
+    </form>
+
+
+    <form id="loginForm">
+        <h2> UserName</h2>
+        <input type="text">
+        <br>
+        <h2> Password </h2>
+        <input type="text">
+        <br>
+        <button> submit </button>
+    </form>
+
+    <!--end of hidden forms, start of page body-->
+
+    <!--the table will contain party information that is important-->
+
+    <div id="map"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="projectapp.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-sqrgZQhEVzmza4QVPrgFp1nOd145WHU&callback=initMap">
+    </script>
+
+</body>
+
+</html>
