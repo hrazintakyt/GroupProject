@@ -73,7 +73,31 @@ $("#submitBtnParty").on("click", function(){
 
 	dataBaseRef.on("child_added", function(snap) {
       // Log everything that's coming out of snapshot
-      console.log(snap);
+      console.log(snap.val());
+
+      var tableRow = $("<tr>")
+
+      var tableData = [$("<td>"), $("<td>"), $("<td>"), $("<td>"), $("<td>") ]
+
+      var json = JSON.stringify(snap.val())
+
+
+      	tableData[0].html(snap.child("dateAdded").val())
+      	tableData[1].html(snap.child("maxCapacity").val())
+      	tableData[2].html(snap.child("theme").val())
+      	tableData[3].html(snap.child("userAddress").val())
+      	tableData[4].html(snap.child("userCost").val())
+
+
+
+
+
+
+      	$("#tableRowAppend").append(tableRow).append(tableData);
+
+		
+
+
   	});
 
 
