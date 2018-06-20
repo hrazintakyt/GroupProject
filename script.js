@@ -1,7 +1,7 @@
 
 $(".signUpBtn").click(function(){
 
-$("#modalForm").css("display", "block")
+	$("#modalForm").css("display", "block")
 
 })
 
@@ -9,11 +9,22 @@ $("#modalForm").css("display", "block")
 
 $(".loginBtn").click(function(){
 
-$("#loginForm").css("display", "block")
+	$("#loginForm").css("display", "block")
 
 })
 
-// Connect our project to FireBase
+
+
+$(".createParty").click(function(){
+
+	$("#PartyCreationForm").css("display", "block")
+
+})
+
+
+
+
+// FireBase
 
 
  var config = {
@@ -26,39 +37,58 @@ $("#loginForm").css("display", "block")
   };
   firebase.initializeApp(config);
 
-
-
-
-var userName = $("#userName")
-var userAge = $("#userAge")
-var userGender = $("#userGender")
-var userPays = $("#userPays")
-
-
-
-// Next we are going to push the input into our backend Database
-
-
-
-$(".submitBtn").on("click", function(snap){
-
-
 var dataBaseRef = firebase.database().ref();
 
-dataBaseRef.child("userName").set(userName.val());
-dataBaseRef.child("userAge").set(userAge.val());
-dataBaseRef.child("userGender").set(userGender.val());
-dataBaseRef.child("userPays").set(userPays.val());
 
-alert("close the form")
-
-$("#modalForm").css("display", "none")
-
-
-return false;
-
+$("#submitBtnParty").on("click", function(){
+	dataBaseRef.push({
+		userAddress: $("#userAddress").val(),
+		maxCapacity: $("#userCapacity").val(),
+		userCost: $("#userCost").val(),
+		theme: $("#userTheme").val(),
+		dateAdded: firebase.database.ServerValue.TIMESTAMP
+	})
+	alert("Party-Created")
+	$("#PartyCreationForm").css("display", "none");
+	return false;
 
 })
+
+
+
+
+
+
+$("#submitBtn").on("click", function(){
+	dataBaseRef.push({
+		userName: $("#userName").val(),
+		userAge: $("#userAge").val(),
+		userGender: $("#userGender").val(),
+		userPays: $("#userPays").val(),
+		dateAdded: firebase.database.ServerValue.TIMESTAMP
+
+	});
+	alert("close the form")
+	$("#modalForm").css("display", "none")
+	return false;
+});
+//
+dataBaseRef.on("child_added", function(snap) {
+      // Log everything that's coming out of snapshot
+      console.log(snap);
+  
+    
+
+   
+});
+
+
+
+
+
+
+
+
 
 
 

@@ -43,6 +43,7 @@ h2{
 	height: 400px;
 	margin-top: 20%;
 	border: 2px solid red;
+	color: black;
 
 }
 
@@ -57,6 +58,23 @@ h2{
 	height: 400px;
 	margin-top: 20%;
 	border: 2px solid red;
+	color: black;
+}
+
+#PartyCreationForm{
+
+display: none;
+	position: absolute;
+	top: 0%;
+	left: 40%;
+	z-index: 2;
+	background: white;
+	width: 30%;
+	height: 400px;
+	margin-top: 20%;
+	border: 2px solid red;
+	color: black;
+
 }
 
 #myJtron{

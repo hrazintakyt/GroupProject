@@ -11,6 +11,10 @@
 	<!--Jquery library-->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
+
+
+
+
 	<!--our css-->
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 	
@@ -24,10 +28,10 @@
 <body>
 
 <nav> 
-	<button><a> Find A Party</a></button>
-	<button><a> Throw A Party</a></button>
-	<button class="signUpBtn">Sign Up</button>
-	<button class="loginBtn"> Login</button>
+	
+	<button class="signUpBtn">Join A Party</button>
+	<button class="loginBtn"> Login to Host</button>
+	<button class="createParty"> Create-Party</button>
 </nav>
 
 <div class="jumbotron jumbotron-fluid" id="myJtron">
@@ -50,7 +54,7 @@
 	<input type="text" id="userPays">
 	<br>
 
-	<button class="submitBtn"> submit </button>
+	<button id="submitBtn"> submit </button>
 </form>
 
 
@@ -59,30 +63,42 @@
 	<input type="text">
 	<br>
 	<h2> Password </h2>
-	<input type="text">
+	<input type="Password">
 	<br>
 	<button class="submitBtn"> submit </button>
 </form>
 
-<!--end of hidden forms, start of page body-->
-
-
-<!--the table will contain party information that is important-->
 
 
 
 
 
+<form id="PartyCreationForm">
+	<h2> Address </h2>
+	<input type="text" id="userAddress">
+	<h2> Max Capacity </h2>
+	<input type="text" id="userCapacity">
+	<h2> Cost to Join</h2>
+	<input type="text" id="userCost">
+	<h2> Theme</h2>
+	<input type="text" id="userTheme">
+	<br>
+
+	<button id="submitBtnParty"> submit </button>
+
+</form>
 
 
 
 
+<!--smth-->
+<h2> Party Info </h2>
 
-
-
-
-
-
+	<p id="Addy"> </p>
+	<p id="MaxCap"> </p>
+	<p id="uCost"> </p>
+	<p id="theme"> </p>
+	
 
 
 
