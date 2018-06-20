@@ -1,3 +1,4 @@
+$(".signUpBtn").click(function () {
 
 $(".signUpBtn").click(function(){
 
@@ -57,6 +58,7 @@ $("#submitBtnParty").on("click", function(){
 
 
 
+$(".loginBtn").click(function () {
 
 
 $("#submitBtn").on("click", function(){
@@ -73,31 +75,12 @@ $("#submitBtn").on("click", function(){
 	return false;
 });
 //
-dataBaseRef.on("child_added", function(snap) {
+	dataBaseRef.on("child_added", function(snap) {
       // Log everything that's coming out of snapshot
       console.log(snap);
-  
-    
-
-   
-});
+  	});
 
 
-
-
-
-
-
-
-
-
-
-// API
-
-
-
-
-
-
-
+})
+})
 
