@@ -1,6 +1,5 @@
 $(".signUpBtn").click(function () {
 
-$(".signUpBtn").click(function(){
 
 	$("#modalForm").css("display", "block")
 
@@ -58,29 +57,23 @@ $("#submitBtnParty").on("click", function(){
 
 
 
-$(".loginBtn").click(function () {
+	$("#submitBtn").on("click", function(){
+		dataBaseRef.push({
+			userName: $("#userName").val(),
+			userAge: $("#userAge").val(),
+			userGender: $("#userGender").val(),
+			userPays: $("#userPays").val(),
+			dateAdded: firebase.database.ServerValue.TIMESTAMP
 
-
-$("#submitBtn").on("click", function(){
-	dataBaseRef.push({
-		userName: $("#userName").val(),
-		userAge: $("#userAge").val(),
-		userGender: $("#userGender").val(),
-		userPays: $("#userPays").val(),
-		dateAdded: firebase.database.ServerValue.TIMESTAMP
-
-	});
+		});
 	alert("close the form")
 	$("#modalForm").css("display", "none")
 	return false;
-});
-//
+	});
+
 	dataBaseRef.on("child_added", function(snap) {
       // Log everything that's coming out of snapshot
       console.log(snap);
   	});
 
-
-})
-})
 

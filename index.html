@@ -18,11 +18,10 @@
 
 
 
-
 	<!--our css-->
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 	
-
+	<!--addingFireBase-->
 
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
     
@@ -41,7 +40,6 @@
 
 <body>
 
-
 <nav> 
 	
 	<button class="signUpBtn">Join A Party</button>
@@ -50,12 +48,11 @@
 </nav>
 
 <div class="jumbotron jumbotron-fluid" id="myJtron">
-
-    </div>
-
+</div>
 
 
-  
+	
+
 
     <form id="modalForm">
         <h2> Name </h2>
@@ -67,8 +64,8 @@
         <h2> Price</h2>
         <input type="text">
         <br>
-		<button id="submitBtn"> submit </button>
-	</form>
+        <button> Submit</button>
+    </form>
 
 <form id="loginForm">
 	<h2> UserName</h2>
@@ -79,26 +76,6 @@
 	<br>
 	<button class="submitBtn"> submit </button>
 </form>
-
-
-
-    <form id="loginForm">
-        <h2> UserName</h2>
-        <input type="text">
-        <br>
-        <h2> Password </h2>
-        <input type="text">
-        <br>
-        <button> submit </button>
-    </form>
-
-    <!--end of hidden forms, start of page body-->
-
-    <!--the table will contain party information that is important-->
-
-    <div id="map"></div>
-
-
 
 
 
@@ -121,14 +98,11 @@
 
 
 
+<div id="map"></div>
+
 
 <!--smth-->
-<h2> Party Info </h2>
 
-	<p id="Addy"> </p>
-	<p id="MaxCap"> </p>
-	<p id="uCost"> </p>
-	<p id="theme"> </p>
 	
 
 
@@ -141,9 +115,9 @@
 
 
     <script src="script.js"></script>
-    <script async defer
+    <!-- <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-sqrgZQhEVzmza4QVPrgFp1nOd145WHU&callback=initMap">
-    </script>
+    </script> -->
 
 </body>
 
