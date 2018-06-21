@@ -1,23 +1,20 @@
 $(".signUpBtn").click(function () {
 
+  $("#modalForm").css("display", "block")
 
-	$("#modalForm").css("display", "block")
+})
+
+$(".loginBtn").click(function () {
+
+  $("#loginForm").css("display", "block")
 
 })
 
 
 
-$(".loginBtn").click(function(){
+$("#createParty").click(function () {
 
-	$("#loginForm").css("display", "block")
-
-})
-
-
-
-$(".createParty").click(function(){
-
-	$("#PartyCreationForm").css("display", "block")
+  $("#PartyCreationForm").css("display", "block")
 
 })
 
@@ -43,7 +40,7 @@ function initMap() {
     center: charlotte
   });
 
-  dataBaseRef.on("child_added", function(snap) {
+  dataBaseRef.on("child_added", function (snap) {
     var queryURL =
       "https://maps.googleapis.com/maps/api/geocode/json?address=" +
       snap.val().userAddress +
@@ -56,7 +53,7 @@ function initMap() {
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       var position = {
         lat: response.results[0].geometry.location.lat,
         lng: response.results[0].geometry.location.lng
@@ -69,8 +66,8 @@ function initMap() {
 
 
 
-  $("#submitBtnParty").on("click", function(){
-    dataBaseRef.push({
+$("#submitBtnParty").on("click", function () {
+  dataBaseRef.push({
     userAddress: $("#userAddress").val(),
     maxCapacity: $("#userCapacity").val(),
     city: $("#city").val(),
@@ -80,43 +77,44 @@ function initMap() {
   alert("Party-Created")
   $("#PartyCreationForm").css("display", "none");
   return false;
-  })
+})
 
-  //   $("#submitBtn").on("click", function(){
-  //    dataBaseRef.push({
-  //      userName: $("#userName").val(),
-  //      userAge: $("#userAge").val(),
-  //      userGender: $("#userGender").val(),
-  //      userPays: $("#userPays").val(),
-  //      dateAdded: firebase.database.ServerValue.TIMESTAMP
-  //     });
-  //   alert("close the form")
-  //   $("#modalForm").css("display", "none")
-  //   return false;
-  //   });
+//   $("#submitBtn").on("click", function(){
+//    dataBaseRef.push({
+//      userName: $("#userName").val(),
+//      userAge: $("#userAge").val(),
+//      userGender: $("#userGender").val(),
+//      userPays: $("#userPays").val(),
+//      dateAdded: firebase.database.ServerValue.TIMESTAMP
+//     });
+//   alert("close the form")
+//   $("#modalForm").css("display", "none")
+//   return false;
+//   });
 
-  //Here we start our child added function, which saves the value 
+//Here we start our child added function, which saves the value 
 
-  dataBaseRef.on("child_added", function(snap) {
-      // Log everything that's coming out of snapshot
-      console.log(snap.val());
+dataBaseRef.on("child_added", function (snap) {
+  // Log everything that's coming out of snapshot
+  console.log(snap.val());
+  moment(snap.child("dateAdded").val()).format("MMMM Do YYYY, h:mm:ss a")
+  console.log(moment(snap.child("dateAdded").val()).format())
+  var tableRow = $("<tr>")
 
-      var tableRow = $("<tr>")
+  var tableData = [$("<td>"), $("<td>"), $("<td>"), $("<td>"), $("<td>")]
+  //table data creates an array of 5 TD's which are not yet filled, we do that here.
+  tableData[0].html(moment(snap.child("dateAdded").val()).format("MMMM Do YYYY, h:mm:ss a"))
+  tableData[1].html(snap.child("maxCapacity").val())
+  tableData[2].html(snap.child("state").val())
+  tableData[3].html(snap.child("userAddress").val())
+  tableData[4].html(snap.child("city").val())
 
-      var tableData = [$("<td>"), $("<td>"), $("<td>"), $("<td>"), $("<td>") ]
-//table data creates an array of 5 TD's which are not yet filled, we do that here.
-      tableData[0].html(snap.child("dateAdded").val())
-      tableData[1].html(snap.child("maxCapacity").val())
-      tableData[2].html(snap.child("state").val())
-      tableData[3].html(snap.child("userAddress").val())
-      tableData[4].html(snap.child("city").val())
-
-//Here we are appending the now filled table datas to the table row, and to the table body
-      $("#tableRowAppend").append(tableRow).append(tableData);
-      console.log(snap.val())
+  //Here we are appending the now filled table datas to the table row, and to the table body
+  $("#tableRowAppend").append(tableRow).append(tableData);
+  console.log(snap.val())
 
 
-  });
+});
 
 
 
