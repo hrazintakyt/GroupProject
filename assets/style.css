@@ -7,23 +7,23 @@ body{
 
 nav{
 
-	width: 95%;
-	margin-left: 2.5%;
-	margin-right: 2.5%;
+	width: 100%;
 	height: 85px;
 	position: static;
-
+	background-color :black! important;
+	color: black;
 
 }
 
+
 button{
-	height: 80px;
-	width: 130px;
+	height: 65px;
+	width: 200px;
 	color: white;
 	background: linear-gradient(black, white);
-	border-radius: 5%;
+	border-radius: 2%;
 	float: left;
-
+    
 }
 
 
@@ -32,11 +32,11 @@ button{
 	display: none;
 	position: absolute;
 	z-index: 2;
-	background: white;
+	background: black;
 	margin-left: 35%;
 	margin-right: 35%;
 	width: 30%;
-	height: 400px;
+	height: 200px;
 	margin-top: 20%;
 	border: 2px solid red;
 	color: black;
@@ -46,15 +46,17 @@ button{
 #modalForm{
 	display: none;
 	position: absolute;
-	z-index: 2;
-	background: white;
+	z-index: 5;
+	background: rgb(5, 5, 5);
 	margin-left: 35%;
 	margin-right: 35%;
 	width: 30%;
-	height: 400px;
+	height: 100px;
 	margin-top: 20%;
 	border: 2px solid red;
 	color: black;
+	overflow: none;
+	font-size: 15px;
 }
 
 #PartyCreationForm{
@@ -63,20 +65,30 @@ display: none;
 	position: absolute;
 	top: 0%;
 	left: 40%;
-	z-index: 2;
-	background: white;
+	z-index: 1;
+	background: rgb(252, 250, 250);
 	width: 30%;
-	height: 400px;
+	height: 458px;
 	margin-top: 20%;
 	border: 2px solid red;
 	color: black;
+	font-size: 15px;
 
 }
 
 #myJtron{
 	background-image: url("party.jpg");
-	height: 500px;
+	height: 640px;
 	background-size: cover;
 	background-repeat: no-repeat;
+	margin-bottom: 0rem;
 	
+}
+#colorBaby {
+	background: black;
+
+}
+table {
+	background-color: black;
+	color: white;
 }
