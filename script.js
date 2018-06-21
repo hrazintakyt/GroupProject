@@ -24,6 +24,9 @@ $(".createParty").click(function(){
 
 
 
+
+
+
 // FireBase
 
 
@@ -44,8 +47,8 @@ $("#submitBtnParty").on("click", function(){
 	dataBaseRef.push({
 		userAddress: $("#userAddress").val(),
 		maxCapacity: $("#userCapacity").val(),
-		userCost: $("#userCost").val(),
-		theme: $("#userTheme").val(),
+		city: $("#city").val(),
+		state: $("#state").val(),
 		dateAdded: firebase.database.ServerValue.TIMESTAMP
 	})
 	alert("Party-Created")
@@ -84,9 +87,9 @@ $("#submitBtnParty").on("click", function(){
 
       	tableData[0].html(snap.child("dateAdded").val())
       	tableData[1].html(snap.child("maxCapacity").val())
-      	tableData[2].html(snap.child("theme").val())
+      	tableData[2].html(snap.child("state").val())
       	tableData[3].html(snap.child("userAddress").val())
-      	tableData[4].html(snap.child("userCost").val())
+      	tableData[4].html(snap.child("city").val())
 
 
 
@@ -94,10 +97,54 @@ $("#submitBtnParty").on("click", function(){
 
 
       	$("#tableRowAppend").append(tableRow).append(tableData);
+        console.log(snap.val())
 
-		
-
+      	openMap(snap.val().city,snap.val().state);
 
   	});
+
+var openMap = function (city, state) {
+   $("#map").empty();
+   
+ var apiKey = "key=AIzaSyB-sqrgZQhEVzmza4QVPrgFp1nOd145WHU";
+
+
+     var queryURL =
+       "https://maps.googleapis.com/maps/api/geocode/json?address=" +
+       city +
+       "," +
+       state +
+       "&key=AIzaSyB-sqrgZQhEVzmza4QVPrgFp1nOd145WHU";
+   $.ajax({
+       url: queryURL,
+       method: "GET"
+   }).then(function (response) {
+       
+       var latitude = response.results[0].geometry.location.lat;
+       var longitude = response.results[0].geometry.location.lng;
+
+
+        initmap(latitude, longitude);
+
+   })
+
+  
+
+
+   function initmap(latitude, longitude) {
+       var uluru = { lat: latitude, lng: longitude };
+       var map = new google.maps.Map(document.getElementById("map"), {
+           zoom: 13,
+           center: uluru
+
+       });
+       var marker = new google.maps.Marker({
+           position: uluru,
+           map: map
+       })
+
+    
+   }
+}
 
 

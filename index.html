@@ -11,6 +11,15 @@
     <!--Jquery library-->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 
+<script>
+  jQuery.ajaxPrefilter(function(options) {
+    if (options.crossDomain && jQuery.support.cors) {
+      options.url = 'https://uncc-cors-proxy.herokuapp.com/' + options.url;
+    }
+  });
+</script>
+
+
     <!--our css-->
     <link rel="stylesheet" type="text/css" href="assets/style.css">
 
@@ -86,10 +95,10 @@
 	<input type="text" id="userAddress">
 	<h2> Max Capacity </h2>
 	<input type="text" id="userCapacity">
-	<h2> Cost to Join</h2>
-	<input type="text" id="userCost">
-	<h2> Theme</h2>
-	<input type="text" id="userTheme">
+	<h2> City</h2>
+	<input type="text" id="city">
+	<h2> State</h2>
+	<input type="text" id="state">
 	<br>
 
 	<button id="submitBtnParty"> submit </button>
@@ -101,9 +110,9 @@
         <tr>
             <th> Date-Added</th>
             <th> Capacity</th>
-            <th> Theme</th>
+            <th> State</th>
             <th> Address</th>
-            <th> Cost</th>
+            <th> City</th>
         </tr>
         <tbody id="tableRowAppend"> 
 
@@ -129,9 +138,9 @@
 
 
     <script src="script.js"></script>
-    <!-- <script async defer
+    <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-sqrgZQhEVzmza4QVPrgFp1nOd145WHU&callback=initMap">
-    </script> -->
+    </script>
 
 </body>
 
