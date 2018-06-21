@@ -6,62 +6,55 @@
     <title>Party Finder</title>
 
     <!--bootstrap library-->
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
     <!--Jquery library-->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-
-<script>
-  jQuery.ajaxPrefilter(function(options) {
-    if (options.crossDomain && jQuery.support.cors) {
-      options.url = 'https://uncc-cors-proxy.herokuapp.com/' + options.url;
-    }
-  });
-</script>
-
-
-    <!--our css-->
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script>
+        jQuery.ajaxPrefilter(function (options) {
+            if (options.crossDomain && jQuery.support.cors) {
+                options.url = 'https://uncc-cors-proxy.herokuapp.com/' + options.url;
+            }
+        });
+    </script>
 
 
-
-
-
-	<!--our css-->
-	<link rel="stylesheet" type="text/css" href="assets/style.css">
-	
-	<!--addingFireBase-->
+    <!--addingFireBase-->
 
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-    
+
     <style>
         #map {
-          height: 100%;
+            height: 100%;
         }
-        html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
         }
-      </style>
+    </style>
 
 </head>
 
 <body>
 
-<nav> 
-	
-	<button class="signUpBtn">Join A Party</button>
-	<button class="loginBtn"> Login to Host</button>
-	<button class="createParty"> Create-Party</button>
-</nav>
+    <nav>
+        <button "a href="#! " class="btn-lg waves-effect waves-red "">Join A Party</button>
+        <button "a href="#! " class="btn-lg waves-effect waves-red ""> Login to Host</button>
+        <button id="createParty" "a href="#! " class="btn-lg waves-effect waves-red ""> Create-Party</button>
+    </nav>
 
-<div class="jumbotron jumbotron-fluid" id="myJtron">
-</div>
-
-
-	
-
+    <div class="jumbotron jumbotron-fluid" id="myJtron">
+    </div>
 
     <form id="modalForm">
         <h2> Name </h2>
@@ -76,57 +69,50 @@
         <button> Submit</button>
     </form>
 
-<form id="loginForm">
-	<h2> UserName</h2>
-	<input type="text">
-	<br>
-	<h2> Password </h2>
-	<input type="Password">
-	<br>
-	<button class="submitBtn"> submit </button>
-</form>
+    <form id="loginForm">
+        <h2> UserName</h2>
+        <input type="text">
+        <br>
+        <h2> Password </h2>
+        <input type="Password">
+        <br>
+        <button class="submitBtn"> submit </button>
+    </form>
+
+   
+    <form id="PartyCreationForm">
+        <h2> Address </h2>
+        <input type="text" id="userAddress">
+        <h2> Max Capacity </h2>
+        <input type="text" id="userCapacity">
+        <h2> City</h2>
+        <input type="text" id="city">
+        <h2> State</h2>
+        <input type="text" id="state">
+        <button id="submitBtnParty" "a href="#! " class="btn-lg waves-effect waves-red ""> SUBMIT</button>
+
+    </form>
+
+    <div>
+        <table>
+            <tr>
+                <th> Date-Added</th>
+                <th> Capacity</th>
+                <th> State</th>
+                <th> Address</th>
+                <th> City</th>
+            </tr>
+            
+            <tbody id="tableRowAppend"></tbody>
+        </table>
+    </div>
+
+    <div id="map"></div>
 
 
+    <!--smth-->
 
 
-
-<form id="PartyCreationForm">
-	<h2> Address </h2>
-	<input type="text" id="userAddress">
-	<h2> Max Capacity </h2>
-	<input type="text" id="userCapacity">
-	<h2> City</h2>
-	<input type="text" id="city">
-	<h2> State</h2>
-	<input type="text" id="state">
-	<br>
-
-	<button id="submitBtnParty"> submit </button>
-
-</form>
-
-<div>
-    <table> 
-        <tr>
-            <th> Date-Added</th>
-            <th> Capacity</th>
-            <th> State</th>
-            <th> Address</th>
-            <th> City</th>
-        </tr>
-        <tbody id="tableRowAppend"> 
-
-        </tbody>
-
-    </table>
- </div>
-
-<div id="map"></div>
-
-
-<!--smth-->
-
-	
 
 
 
@@ -138,8 +124,7 @@
 
 
     <script src="script.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-sqrgZQhEVzmza4QVPrgFp1nOd145WHU&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-sqrgZQhEVzmza4QVPrgFp1nOd145WHU&callback=initMap">
     </script>
 
 </body>
