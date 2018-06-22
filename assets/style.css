@@ -5,15 +5,47 @@ body{
 
 }
 
+#thisOff{
+	text-decoration: none;
+	color: white;
+}
+
 nav{
 
-	width: 100%;
-	height: 85px;
-	position: static;
+	width: 50%;
+	position: absolute;
 	background-color :black! important;
 	color: black;
 	overflow: none;
-	
+	float: left;
+	display: inline-block;
+}
+
+header{
+	height: 70px;
+	background-color: black;
+}
+
+
+.HeadingOne{
+	text-align: center;
+	font-family: serif;
+	color: white;
+
+}
+
+
+.xBtn{
+	float: right;
+	color: black;
+	font-family: serif;
+	position: absolute;
+	left: 90%;
+	top: 90%;
+}
+
+.xBtn:hover{
+	color: gray;
 
 }
 
@@ -49,6 +81,9 @@ button:hover{
 }
 
 
+td:hover{
+	background: gray;
+}
 
 
 
@@ -96,7 +131,7 @@ display: none;
 	z-index: 1;
 	background: rgb(252, 250, 250);
 	width: 30%;
-	height: 458px;
+	height: 468px;
 	margin-top: 20%;
 	border: 5px dashed black;
 	color: black;
@@ -132,6 +167,7 @@ table {
 	width: 50%;
 	margin-left: 50%;
 	border-left: 5px dashed white;
+	height: 100%;
 }
 
 i{
@@ -141,4 +177,79 @@ i{
 	margin-left: 20%;
 	position: relative;
 }
+
+
+
+
+/*Media Queries are going to be Below*/
+
+
+@media (max-width: 1300px) {
+
+header{
+	height: 140px;
+}
+
+
+.rightNav{
+	position: relative;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
+	top: 75px;
+	display: block;
+	border: none;
+}
+
+.leftNav{
+	position: absolute;
+	width: 100%;
+	margin-left: 20%;
+	margin-right: 20%;
+	top: 0px;
+	display: block;
+	border: none;	
+}
+
+#PartyCreationForm{
+
+display: none;
+	position: absolute;
+	top: 5%;
+	left: 35%;
+	z-index: 1;
+	background: rgb(252, 250, 250);
+	width: 30%;
+	height: 468px;
+	margin-top: 20%;
+	border: 5px dashed black;
+	color: black;
+	font-size: 15px;
+	font-family: serif;
+	text-align: center;
+
+}
+
+
+
+}
+
+
+
+@media (max-width: 755px) {
+	header{
+		height: 200px;
+	}
+	.leftNav{
+		position: absolute;
+		padding-right: 50%;
+		width: 100%;
+	}
+	.rightNav{
+		display: none;
+	}
+
+
+
+
 
