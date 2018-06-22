@@ -12,6 +12,8 @@ nav{
 	position: static;
 	background-color :black! important;
 	color: black;
+	overflow: none;
+	
 
 }
 
@@ -23,6 +25,7 @@ button{
 	background: linear-gradient(black, white);
 	border-radius: 2%;
 	float: left;
+
     
 }
 

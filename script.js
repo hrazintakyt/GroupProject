@@ -67,6 +67,29 @@ function initMap() {
 
 
 $("#submitBtnParty").on("click", function () {
+
+//make sure to put validation here, before we push
+  var x = $("#userAddress").val();
+  if (x == "") {
+    $("#userAddress").val() = "please fill out this field"
+    return false;
+  }
+
+  var y = $("#city").val();
+  if (y == "") {
+    $("#city").val() = "please fill out this field"
+    return false;
+  }
+
+  var z = $("#state").val();
+  if (z == "") {
+    $("#state").val() = "please fill out this field"
+    return false;
+  }
+
+
+
+  
   dataBaseRef.push({
     userAddress: $("#userAddress").val(),
     maxCapacity: $("#userCapacity").val(),

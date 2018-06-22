@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="assets/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="icon" type="ico" href="assets/favicon.ico">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
@@ -32,7 +33,15 @@
 
     <style>
         #map {
-            height: 100%;
+            height: 80%;
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+            border-right: 5px dashed red;
+            border-left: 5px dashed red;
+            border-top: 5px dashed red;
+            border-bottom: 5px dashed red;
+            background: black;
         }
 
         html,
@@ -40,6 +49,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            background: black;
         }
     </style>
 
@@ -52,11 +62,6 @@
         <button "a href="#! " class="btn-lg waves-effect waves-red ""> Login to Host</button>
         <button id="createParty" "a href="#! " class="btn-lg waves-effect waves-red ""> Create-Party</button>
     </nav>
-
-    
-<h1>Helloo There</h1>
-
-
 
     <div class="jumbotron jumbotron-fluid" id="myJtron">
     </div>
@@ -87,13 +92,13 @@
    
     <form id="PartyCreationForm">
         <h2> Address </h2>
-        <input type="text" id="userAddress">
+        <input type="text" id="userAddress" required>
         <h2> Max Capacity </h2>
-        <input type="text" id="userCapacity">
+        <input type="text" id="userCapacity" required>
         <h2> City</h2>
-        <input type="text" id="city">
+        <input type="text" id="city" required>
         <h2> State</h2>
-        <input type="text" id="state">
+        <input type="text" id="state" required>
         <button id="submitBtnParty" "a href="#! " class="btn-lg waves-effect waves-red ""> SUBMIT</button>
 
     </form>
