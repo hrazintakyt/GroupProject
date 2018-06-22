@@ -18,6 +18,12 @@ $("#createParty").click(function () {
 
 })
 
+$(".xBtn").click(function () {
+
+  $("#PartyCreationForm").css("display", "none")
+
+})
+
 
 var config = {
   apiKey: "AIzaSyBd2AVAZK2E9x8cNQe4QRMJ_kOphSwWM5I",
@@ -58,7 +64,9 @@ function initMap() {
         lat: response.results[0].geometry.location.lat,
         lng: response.results[0].geometry.location.lng
       };
-      new google.maps.Marker({ position: position, map: map });
+       var MyMarker = new google.maps.Marker({ position: position, map: map });
+
+
     });
   });
 }
@@ -66,7 +74,20 @@ function initMap() {
 
 
 
+
+
 $("#submitBtnParty").on("click", function () {
+
+  var $btn = $(this).parent();
+    if($btn.closest('table').data('theCount') == undefined) {
+        $btn.closest('table').data('theCount', 0)
+    }
+    var currentCount = $btn.closest('table').data('theCount');
+
+    if(currentCount < 5) {
+        $btn.closest('tr').clone(true).insertAfter($btn);
+        $btn.closest('table').data('theCount', currentCount + 1);
+    }
 
 //make sure to put validation here, before we push
   var x = $("#userAddress").val();
@@ -135,6 +156,8 @@ dataBaseRef.on("child_added", function (snap) {
   //Here we are appending the now filled table datas to the table row, and to the table body
   $("#tableRowAppend").append(tableRow).append(tableData);
   console.log(snap.val())
+
+  
 
 
 });
